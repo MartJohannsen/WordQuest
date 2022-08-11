@@ -22,3 +22,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Pushing to website
+#### Deletes branch and creates a new one
+git push origin --delete gh-pages
+git subtree push --prefix dist origin gh-pages
