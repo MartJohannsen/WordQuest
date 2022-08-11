@@ -24,7 +24,7 @@
     },
     methods: {
       emitLetter(letter){
-        console.log("Emitted letter " + letter);
+        //console.log("Emitted letter " + letter);
         this.$emit("emittedLetter",letter)
       }
     }
