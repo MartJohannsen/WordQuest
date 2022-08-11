@@ -22,6 +22,8 @@
       :tries="tries"
       @resetGame=resetGame
     />
+    <keyboard v-if="!checkForWin"
+    @emittedLetter=addLetter />
   </div>
 </template>
 
@@ -33,6 +35,7 @@ import NextWord from './components/NextWord.vue'
 import WordScore from './components/WordScore.vue'
 import words from '../words'
 import TriesLeft from './components/TriesLeft.vue'
+import Keyboard from './components/Keyboard.vue'
 import {getCookie} from './helper'
 
 export default {
@@ -43,7 +46,8 @@ export default {
     GuessedSection,
     NextWord,
     WordScore,
-    TriesLeft
+    TriesLeft,
+    Keyboard
   },
   data() {
     return {

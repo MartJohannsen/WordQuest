@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="letters"  style="font-size:128px">
+    <div class="letters">
       <div v-for="letter in wordArray" :key="letter.index">
         <div v-if="guessedLetters.includes(letter.letter)">{{letter.letter}}</div>
         <div v-else> - </div>
