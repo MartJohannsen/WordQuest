@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <button v-for="letter in loadedLetters.letters" :key="letter.index" @click="emitLetter(letter)"> {{letter}} </button>
-  </div>  
+  <div class="keyboard bottom">
+    <div v-for="letter in loadedLetters.letters"  :key="letter.index"> 
+      <button class="button" @click="emitLetter(letter)" :disabled="guessedLetters.includes(letter)">{{letter}} </button>
+    </div>  
+  </div>
 </template>
 
 <script>
@@ -14,7 +16,7 @@
       }
     },
     props: {
-      
+      guessedLetters: {type: Array}
     },
     computed: {
       

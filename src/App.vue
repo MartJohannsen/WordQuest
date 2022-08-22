@@ -4,9 +4,9 @@
       :currentWord="wordList.words[wordNumber]"
       :guessedLetters="guessedLetters"
     />
-    <guess-section v-if="!checkForWin && tries != 0"
+    <!-- <guess-section v-if="!checkForWin && tries != 0"
       @enteredLetter=addLetter  
-    />
+    /> -->
     <guessed-section v-if="!checkForWin"
       :guessedLetters="guessedLetters"
     />
@@ -23,13 +23,15 @@
       @resetGame=resetGame
     />
     <keyboard v-if="!checkForWin"
-    @emittedLetter=addLetter />
+      @emittedLetter=addLetter 
+      :guessedLetters="guessedLetters"
+    />
   </div>
 </template>
 
 <script>
 import GuessedSection from './components/GuessedSection.vue'
-import GuessSection from './components/GuessSection.vue'
+/* import GuessSection from './components/GuessSection.vue' */
 import WordSection from './components/WordSection.vue'
 import NextWord from './components/NextWord.vue'
 import WordScore from './components/WordScore.vue'
@@ -42,7 +44,7 @@ export default {
   name: 'App',
   components: {
     WordSection,
-    GuessSection,
+    /* GuessSection, */
     GuessedSection,
     NextWord,
     WordScore,
