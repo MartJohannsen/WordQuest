@@ -74,7 +74,7 @@ export default {
     
 /*     console.log(this.highScore);
     console.log(this.wordList.words); */
-    console.log("Thought you'd cheat by looking here eh?")
+    /* console.log("Thought you'd cheat by looking here eh?") */
     this.tries = this.wordList.words[this.wordNumber].length + 5;
   },
   methods: {
