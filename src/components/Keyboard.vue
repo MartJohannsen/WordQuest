@@ -1,7 +1,7 @@
 <template>
   <div class="keyboard bottom">
     <div v-for="letter in loadedLetters.letters"  :key="letter.index"> 
-      <button class="button" @click="emitLetter(letter)" :disabled="guessedLetters.includes(letter)">{{letter}} </button>
+      <button class="button" v-bind:class="{'red': !disabled, 'blue': disabled}" @click="emitLetter(letter)" :disabled="guessedLetters.includes(letter) || disableAll">{{letter}} </button>
     </div>  
   </div>
 </template>
@@ -16,7 +16,8 @@
       }
     },
     props: {
-      guessedLetters: {type: Array}
+      guessedLetters: {type: Array},
+      disableAll: {type: Boolean, default: false}
     },
     computed: {
       

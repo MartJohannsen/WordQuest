@@ -6,6 +6,9 @@
         <div v-else> - </div>
       </div>
     </div>
+    <div>
+      {{previousWord}}
+    </div>
   </div>  
 </template>
 
@@ -17,6 +20,7 @@
     },
     props: {
       currentWord: {type: String},
+      previousWord: {type: String},
       guessedLetters: {type: Array}
     },
     computed: {
