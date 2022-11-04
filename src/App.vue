@@ -28,7 +28,7 @@
       :tries="tries"
       @resetGame=resetGame
     />
-    <keyboard v-if="!checkForWin"
+    <keyboard v-if="tries > 0"
       @emittedLetter=addLetter 
       :guessedLetters="guessedLetters"
     />
@@ -136,7 +136,7 @@ export default {
 
       let checker = (arr, target) => target.every(v => arr.includes(v));
 
-      /* console.log("Checker: " + checker(this.guessedLetters, this.wordList.words[this.wordNumber].split(""))); */
+      console.log("Checker: " + checker(this.guessedLetters, this.wordList.words[this.wordNumber].split(""))); 
       if(checker(this.guessedLetters, this.wordList.words[this.wordNumber].split("")) == true){
         this.newWord();
       }
